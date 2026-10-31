@@ -1,0 +1,17 @@
+erDiagram
+  ROLES ||--o{ USERS : has
+  USERS ||--o| MECHANICS : "is a"
+  USERS ||--o{ VEHICLES : owns
+  USERS ||--o{ SERVICE_REQUESTS : books
+  VEHICLES ||--o{ SERVICE_REQUESTS : "serviced in"
+  SERVICE_REQUESTS ||--o{ MECHANIC_ASSIGNMENTS : "assigned via"
+  MECHANICS ||--o{ MECHANIC_ASSIGNMENTS : works
+  SERVICE_REQUESTS ||--o{ SERVICE_UPDATES : "progress log"
+  SERVICE_REQUESTS ||--o| INVOICES : billed
+  INVOICES ||--o{ INVOICE_ITEMS : contains
+  INVOICES ||--o{ PAYMENTS : "paid by"
+  SPARE_PARTS ||--o{ INVOICE_ITEMS : "used in"
+  SPARE_PARTS ||--o{ INVENTORY_TRANSACTIONS : "stock moves"
+  SERVICE_REQUESTS ||--o{ INVENTORY_TRANSACTIONS : consumes
+  VEHICLES ||--o{ MAINTENANCE_RECORDS : history
+  SERVICE_REQUESTS ||--o{ MAINTENANCE_RECORDS : creates
